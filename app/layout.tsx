@@ -88,7 +88,7 @@ function structuredData() {
         alternateName: site.shortName,
         url: siteUrl,
         description:
-          'London marketing agency run by two senior in-house marketers, offering Google Ads and performance marketing, brand identity and graphic design, and WordPress website design and build.',
+          'London marketing and brand studio offering Google Ads and performance marketing, brand identity and graphic design, and WordPress website design and build. Built on a decade of in-house marketing leadership at regulated brands and a decade of independent brand identity practice.',
         slogan: site.tagline,
         email: site.email,
         image: `${siteUrl}/opengraph-image`,

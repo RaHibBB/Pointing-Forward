@@ -79,8 +79,8 @@ export default async function Image() {
               lineHeight: 1.4,
             }}
           >
-            Google Ads, brand identity and websites — run by the two people who did it
-            in-house for a decade.
+            Google Ads, brand identity and websites — a decade of in-house marketing
+            leadership, a decade of independent brand identity work.
           </div>
         </div>
 
