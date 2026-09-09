@@ -1,0 +1,12 @@
+# Local review artefacts
+.impeccable/
+
+# Local working copies (timestamped snapshots kept outside version control)
+pointing-forward_5.backup-*.html
+pointing-forward_5.improved-*.html
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
