@@ -3,6 +3,7 @@ import {
   caseStudies,
   faqs,
   formatPrice,
+  navLinks,
   prices,
   services,
   team,
@@ -34,12 +35,8 @@ export function Hero() {
             Marketing in the <span className="highlight">right</span> direction.
           </h1>
           <p className="hero-sub">
-            Pointing Forward Marketing, a London agency, is founded by William Pointing. He spent over a
-            decade managing marketing for regulated financial services brands. Joining Pointing is Ludo
-            Quaranta, who has dedicated the same time to crafting brand identities for organisations
-            striving to bridge the gap between their actions and perceptions. Together they deliver
-            rigorous performance campaigns, brand design and website development without the burden of
-            corporate overhead.
+            Google Ads, brand identity and websites for businesses that need pipeline, not decks &mdash;
+            built by the two people who spent a decade doing this in-house.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#work">
@@ -50,6 +47,43 @@ export function Hero() {
             </a>
           </div>
         </div>
+
+        <aside className="hero-panel">
+          <div className="hero-panel-faces">
+            <Image
+              src="/images/team-william-pointing.jpg"
+              alt="William Pointing"
+              width={60}
+              height={60}
+              sizes="60px"
+              priority
+            />
+            <Image
+              src="/images/team-ludo-quaranta.jpg"
+              alt="Ludovica Quaranta"
+              width={60}
+              height={60}
+              sizes="60px"
+              priority
+            />
+          </div>
+          <div className="hero-panel-role">Who you actually work with</div>
+          <div className="hero-panel-names">William Pointing &amp; Ludo Quaranta</div>
+          <p>
+            You brief us and we do the work. No account layer, no juniors, and no handover to a team you
+            never met.
+          </p>
+          <div className="hero-panel-proof">
+            <div>
+              <span className="stat-num mono">20+</span>
+              <span className="stat-label">years in-house, combined</span>
+            </div>
+            <div>
+              <span className="stat-num mono">2</span>
+              <span className="stat-label">people on your account</span>
+            </div>
+          </div>
+        </aside>
       </section>
     </div>
   );
@@ -322,13 +356,88 @@ export function FaqSection() {
 }
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="site">
-      <div className="wrap foot-row">
-        <span>&copy; {new Date().getFullYear()} Pointing Forward Marketing</span>
-        <span>
-          {site.locality}, UK
-        </span>
+      <div className="wrap">
+        <div className="foot-main">
+          <div className="foot-brand">
+            <a href="#top" className="wordmark">
+              Pointing Forward
+              <span className="wordmark-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 12h16M14 6l6 6-6 6"
+                    stroke="currentColor"
+                    strokeWidth="2.3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
+            <p>
+              Google Ads, brand identity and websites, run by the two people who spent a decade doing
+              this in-house at regulated UK brands.
+            </p>
+            <span className="foot-place">{site.locality}, United Kingdom</span>
+          </div>
+
+          <nav className="foot-col" aria-label="Sections">
+            <h3>Explore</h3>
+            <ul>
+              {navLinks.map((l) => (
+                <li key={l.href}>
+                  <a href={l.href}>{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="foot-col">
+            <h3>What we do</h3>
+            <ul>
+              {services.map((s) => (
+                <li key={s.num}>
+                  <a href="#services">{s.title}</a>
+                </li>
+              ))}
+              <li>
+                <a href="#pricing">Pricing</a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="foot-col">
+            <h3>Get in touch</h3>
+            <ul>
+              <li>
+                <a className="out" href={site.calendly} target="_blank" rel="noopener">
+                  Book a consultation
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${site.email}`}>Email us</a>
+              </li>
+              <li>
+                <a className="out" href="https://designedbyludo.com" target="_blank" rel="noopener">
+                  designedbyludo.com
+                </a>
+              </li>
+              <li>
+                <a className="out" href="https://greatdealsmadeeasy.com" target="_blank" rel="noopener">
+                  greatdealsmadeeasy.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="foot-bar">
+          <span>&copy; {year} Pointing Forward Marketing</span>
+          <a href="#top">Back to top</a>
+        </div>
       </div>
     </footer>
   );
