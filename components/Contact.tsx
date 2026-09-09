@@ -15,6 +15,9 @@ export function Contact() {
     const name = String(data.get('name') ?? '').trim();
     const email = String(data.get('email') ?? '').trim();
     const message = String(data.get('message') ?? '').trim();
+    // Honeypot: hidden from people, irresistible to bots. Sent as-is; the server
+    // decides what to do with it.
+    const company = String(data.get('company') ?? '').trim();
 
     if (!name || !email || !message) {
       setStatus({ state: 'error', msg: 'Please fill in your name, email and message so we can reply.' });
@@ -30,7 +33,7 @@ export function Contact() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, company }),
       });
       const body = (await res.json()) as { ok?: boolean; error?: string; fallback?: boolean };
 
@@ -123,6 +126,16 @@ export function Contact() {
             <div className="form-field full">
               <label htmlFor="cf-message">Message</label>
               <textarea id="cf-message" name="message" rows={5} required />
+            </div>
+            <div className="form-honeypot" aria-hidden="true">
+              <label htmlFor="cf-company">Company</label>
+              <input
+                id="cf-company"
+                name="company"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </div>
           </div>
           <button className="btn btn-primary form-submit" type="submit" disabled={sending} aria-busy={sending}>

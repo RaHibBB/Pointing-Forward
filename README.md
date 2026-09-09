@@ -21,12 +21,15 @@ Then open http://localhost:3000.
 
 ## Environment variables
 
-Both are optional — the site builds and deploys without them.
+All are optional: the site builds and deploys without them, but the contact form
+cannot deliver until `RESEND_API_KEY` is set.
 
 | Variable | Purpose |
 |---|---|
 | `NEXT_PUBLIC_SITE_URL` | The live origin, e.g. `https://pointingforward.co.uk`. Drives the canonical URL, `og:url`, `sitemap.xml` and the JSON-LD identity. **Set this in Vercel once the real domain is connected.** Until then it falls back to `VERCEL_PROJECT_PRODUCTION_URL`, which Vercel injects automatically, so everything is still correct on the `.vercel.app` host. |
-| `CONTACT_WEBHOOK_URL` | Where contact-form submissions are POSTed as JSON — Formspree, Basin, Zapier, a Slack incoming webhook, anything that accepts a JSON body. **While this is unset the form validates the submission and then hands off to the visitor's mail client with the message pre-filled**, rather than pretending to deliver something nobody receives. |
+| `RESEND_API_KEY` | Required for the contact form to actually send. **While this is unset the form validates the submission and then hands off to the visitor's mail client with the message pre-filled**, rather than pretending to deliver something nobody receives. |
+| `CONTACT_TO` | Where enquiries land. Defaults to the address shown on the page. |
+| `CONTACT_FROM` | The sender, e.g. `Pointing Forward <hello@pointingforward.co.uk>`. Must be on a domain verified in Resend or Resend rejects the send. Defaults to `hello@` the live domain. |
 
 ## Layout
 
@@ -86,16 +89,30 @@ blocked first paint.
 `next/font` self-hosts the three typefaces so there is no render-blocking request
 to `fonts.googleapis.com`.
 
+## Contact form
+
+Submissions POST to `app/api/contact/route.ts`, which sends via Resend with
+`Reply-To` set to the enquirer, so replying in the inbox goes to them.
+
+To enable it:
+
+1. Add `pointingforward.co.uk` as a domain in Resend and create the DKIM/SPF
+   records it gives you in Hostinger's DNS. Resend refuses to send from an
+   unverified domain.
+2. Set `RESEND_API_KEY`, and `CONTACT_TO` if enquiries should go somewhere other
+   than the address on the page.
+3. Redeploy.
+
+A hidden "company" honeypot field guards against bot spam: it is positioned
+off-screen rather than `display:none` (some bots skip unrendered fields), hidden
+from assistive technology, and out of tab order. A submission with it filled in
+gets a success response and is dropped, so the bot has nothing to tune against.
+
 ## Known issues
 
-Carried over from the original build, and left in place deliberately so the design
-matches what the client signed off:
-
-- **Horizontal overflow on mobile** — 196px at 768px wide, 106px at 390px. Caused by
-  `.case-role { white-space: nowrap }` setting a min-content floor on the case cards.
-  Fixed by allowing that pill to wrap, plus `min-width: 0` on the grid items.
 - **No mobile navigation** — `.navlinks` is hidden below 760px with no menu to
-  replace it, so on a phone the only nav control is "Start a project".
+  replace it, so on a phone the only nav control is "Start a project". Everything
+  else is reachable only by scrolling.
 - **FAQ copy is drafted, not approved.** Every answer is assembled from facts already
   stated elsewhere on the page, but William should read all eight before launch — in
   particular the pricing summary and the regulated-industry claims. See the comment

@@ -1083,6 +1083,14 @@
     font-size:0.78rem;
     color:var(--ink-faint);
   }
+  /* Positioned off-screen rather than display:none — some bots ignore fields that
+     are not rendered at all, and this one only works if they fill it in. */
+  .form-honeypot{
+    position:absolute;
+    left:-9999px;
+    width:1px; height:1px;
+    overflow:hidden;
+  }
 
   /* next/image wraps each image; the ported rules target the <img> itself, so make the
      wrapper transparent to layout in the two places a fixed box is expected. */
