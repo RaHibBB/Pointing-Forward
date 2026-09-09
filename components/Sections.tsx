@@ -35,9 +35,9 @@ export function Hero() {
             Marketing in the <span className="highlight">right</span> direction.
           </h1>
           <p className="hero-sub">
-            Google Ads, brand identity and websites for businesses that need pipeline, not decks
-            &mdash; built by a decade of in-house marketing leadership and a decade of independent
-            brand identity work.
+            Google Ads, brand identity and websites for businesses that need pipeline, not decks.
+            Built by a decade of in-house marketing leadership and a decade of independent brand
+            identity work.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#work">

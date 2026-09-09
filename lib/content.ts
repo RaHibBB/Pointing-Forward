@@ -231,7 +231,7 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: 'What does Pointing Forward Marketing do?',
-    a: 'Three things: performance marketing (Google Ads, paid search and lead generation), brand and graphic design (logos, brochures, annual reports and campaign creative), and website design and build on WordPress. Most clients take a combination — a brand refresh and the site that carries it, or a new site and the ad campaigns that feed it.',
+    a: 'Three things: performance marketing (Google Ads, paid search and lead generation), brand and graphic design (logos, brochures, annual reports and campaign creative), and website design and build on WordPress. Most clients take a combination: a brand refresh and the site that carries it, or a new site and the ad campaigns that feed it.',
   },
   {
     q: 'Where are you based?',

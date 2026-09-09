@@ -11,24 +11,24 @@
 
 ## Who they are
 
-- **William Pointing** — Co-Founder, Performance Marketing. Over a decade leading
+- **William Pointing**: Co-Founder, Performance Marketing. Over a decade leading
   marketing inside regulated financial services brands. Runs strategy, Google Ads
   and lead-generation partnerships. Also writes at greatdealsmadeeasy.com.
-- **Ludovica "Ludo" Quaranta** — Co-Founder, Brand & Design Partner. Close to a
+- **Ludovica "Ludo" Quaranta**: Co-Founder, Brand & Design Partner. Close to a
   decade in brand identity, logos, brochures and visual systems, first in Milan
   then London. Portfolio at designedbyludo.com.
-- **Rahib** — Web Developer. Builds and maintains the WordPress sites.
+- **Rahib**: Web Developer. Builds and maintains the WordPress sites.
 - A bench of freelance project managers, photographers and marketing strategists
   is brought in per project.
 
 ## What they do
 
-- **Performance marketing** — Google Ads and paid search; lead generation through
+- **Performance marketing**: Google Ads and paid search; lead generation through
   comparison sites and bloggers; improving positioning in Google; reporting tied
   to leads and revenue rather than impressions.
-- **Graphic design** — logos and branding; brochures and annual reports; web and
+- **Graphic design**: logos and branding; brochures and annual reports; web and
   landing page design; creative campaigns.
-- **Web build** — WordPress design and build; site migrations and rebuilds; sites
+- **Web build**: WordPress design and build; site migrations and rebuilds; sites
   set up to be found in search from launch; ongoing site management.
 
 ## Pricing (starting prices, GBP, quoted per project)
@@ -47,7 +47,7 @@ Every project is scoped individually after a free 30 minute consultation.
 ## Sector experience
 
 William has led marketing for retail investment platforms, commercial and
-specialty insurance, commodities and consumer credit — including campaigns
+specialty insurance, commodities and consumer credit, including campaigns
 delivered under FCA financial promotion rules. Ludo brings a decade of
 independent brand identity work across sectors, with a focus on purpose-driven
 organisations. Named engagements and roles include Biachem, 3NTT Group, Bestinvest
@@ -55,7 +55,7 @@ organisations. Named engagements and roles include Biachem, 3NTT Group, Bestinve
 
 ## How they work
 
-- Direct: no account layer, no jargon — clients work with the people doing the work.
+- Direct: no account layer, no jargon: clients work with the people doing the work.
 - Accountable: campaigns report to leads, activation or revenue, not vanity metrics.
 - Senior, not junior: built on in-house leadership experience.
 - Built to last: sites and brand assets handed over in a state the client's own

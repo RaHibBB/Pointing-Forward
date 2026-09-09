@@ -21,7 +21,7 @@ export function Contact() {
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-      setStatus({ state: 'error', msg: 'That email address does not look right — check it and try again.' });
+      setStatus({ state: 'error', msg: 'That email address does not look right. Check it and try again.' });
       return;
     }
 
@@ -43,13 +43,13 @@ export function Contact() {
         // with the message pre-filled, which is honest about what just happened.
         setStatus({ state: 'ok', msg: 'Opening your email app with this message ready to send.' });
         const subject = `Website enquiry from ${name}`;
-        const mailBody = `${message}\n\n—\n${name}\n${email}`;
+        const mailBody = `${message}\n\n--\n${name}\n${email}`;
         window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(mailBody)}`;
         return;
       }
 
       form.reset();
-      setStatus({ state: 'ok', msg: 'Thanks — that reached us. We reply within one working day.' });
+      setStatus({ state: 'ok', msg: 'Thanks, that reached us. We reply within one working day.' });
     } catch {
       setStatus({
         state: 'error',
