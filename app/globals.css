@@ -307,6 +307,40 @@
     flex-wrap:wrap;
     gap:20px 26px;
   }
+
+  /* The strip wrapped into an uneven pile on phones (1 / 2 / 2 / 1, widest logo alone on
+     the first row) because the chips are intrinsically sized. Below 900px it becomes one
+     swipeable row. Desktop keeps the centred wrap, which already fits on a single line,
+     so centring never fights an overflow. */
+  @media (max-width:900px){
+    .trust-logos{
+      flex-wrap:nowrap;
+      justify-content:flex-start;
+      gap:12px;
+      overflow-x:auto;
+      scroll-snap-type:x proximity;
+      -webkit-overflow-scrolling:touch;
+      margin:0 -32px;
+      padding:2px 32px 12px;
+      scrollbar-width:none;
+      -webkit-mask-image:linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+      mask-image:linear-gradient(to right, transparent 0, #000 32px, #000 calc(100% - 32px), transparent 100%);
+    }
+    .trust-logos::-webkit-scrollbar{display:none;}
+    .trust-logos:focus-visible{outline:2px solid var(--green); outline-offset:2px;}
+    .trust-logo-chip{
+      flex:0 0 auto;
+      scroll-snap-align:center;
+      padding:14px 20px;
+    }
+    .trust-logo-chip img{height:34px; max-width:150px;}
+  }
+  @media (max-width:640px){
+    .trust-logos{margin:0 -20px; padding:2px 20px 12px;}
+  }
+  @media (max-width:380px){
+    .trust-logos{margin:0 -16px; padding:2px 16px 12px;}
+  }
   .trust-logo{
     display:inline-flex; align-items:baseline; gap:8px;
     font-family:var(--font-fraunces), Georgia, serif;

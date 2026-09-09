@@ -94,7 +94,12 @@ export function Trust() {
   return (
     <div className="trust">
       <div className="trust-kicker">Brands we&rsquo;ve marketed</div>
-      <div className="trust-logos">
+      <div
+        className="trust-logos"
+        role="group"
+        aria-label="Brands we have marketed"
+        tabIndex={0}
+      >
         {trustLogos.map((logo) => (
           <span className="trust-logo-chip" key={logo.src}>
             <Image
