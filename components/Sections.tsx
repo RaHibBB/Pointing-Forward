@@ -76,11 +76,11 @@ export function Hero() {
           </p>
           <div className="hero-panel-proof">
             <div>
-              <span className="stat-num mono">2</span>
-              <span className="stat-label">senior specialists</span>
+              <span className="stat-num mono">2+</span>
+              <span className="stat-label">people on the work</span>
             </div>
             <div>
-              <span className="stat-num mono">0</span>
+              <span className="stat-num mono">&ndash;</span>
               <span className="stat-label">account layer</span>
             </div>
           </div>
