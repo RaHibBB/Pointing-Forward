@@ -202,14 +202,13 @@
     display:flex; align-items:center;
     margin-bottom:20px;
   }
+  .hero-panel-faces{gap:12px;}
   .hero-panel-faces img{
-    width:60px; height:60px;
+    width:76px; height:76px;
     border-radius:50%;
     object-fit:cover; object-position:top;
-    border:2px solid var(--card);
     flex:none;
   }
-  .hero-panel-faces img + img{margin-left:-16px;}
   .hero-panel-names{
     font-family:var(--font-fraunces), Georgia, serif;
     font-size:1.1rem;
@@ -556,6 +555,7 @@
     grid-template-columns:repeat(2,1fr);
     gap:24px;
   }
+  .work-grid > *, .team-grid > *, .services > *, .pricing-grid > *, .quotes > *, .faq > *{min-width:0;}
   @media (max-width:760px){ .work-grid{grid-template-columns:1fr;} }
   .case{
     background:var(--card);
@@ -583,7 +583,6 @@
     border:1px solid var(--line);
     padding:5px 10px;
     border-radius:999px;
-    white-space:nowrap;
   }
   .case-sector{
     font-size:0.82rem;

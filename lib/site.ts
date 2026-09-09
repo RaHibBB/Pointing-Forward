@@ -31,7 +31,7 @@ export const site = {
   shortName: 'Pointing Forward',
   title: 'Pointing Forward Marketing | Google Ads, Brand & Web, London',
   description:
-    'London marketing agency run by two senior in-house marketers: Google Ads, brand identity and WordPress builds for businesses that need pipeline, not decks.',
+    'London marketing and brand studio: performance marketing from a decade in-house at regulated brands, brand identity from a decade across startups and independent design practice.',
   tagline: 'Marketing in the right direction.',
   locale: 'en_GB',
   lang: 'en-GB',

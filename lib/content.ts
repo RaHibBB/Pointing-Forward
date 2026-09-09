@@ -247,7 +247,7 @@ export const faqs: Faq[] = [
   },
   {
     q: 'What industries do you specialise in?',
-    a: 'Regulated and considered purchases. Between them the founders spent over a decade leading marketing in insurance, retail investment platforms, commodities and consumer credit, including work delivered inside FCA financial promotion rules.',
+    a: "William has over a decade's experience leading marketing in insurance, retail investment platforms, commodities and consumer credit, including work delivered inside FCA financial promotion rules. Ludo brings a decade of independent brand identity work across different sectors, with a focus on purpose-driven organisations.",
   },
   {
     q: 'Can you run Google Ads for a regulated business?',

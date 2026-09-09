@@ -53,17 +53,17 @@ export function Hero() {
             <Image
               src="/images/team-william-pointing.jpg"
               alt="William Pointing"
-              width={60}
-              height={60}
-              sizes="60px"
+              width={76}
+              height={76}
+              sizes="76px"
               priority
             />
             <Image
               src="/images/team-ludo-quaranta.jpg"
               alt="Ludovica Quaranta"
-              width={60}
-              height={60}
-              sizes="60px"
+              width={76}
+              height={76}
+              sizes="76px"
               priority
             />
           </div>
@@ -75,12 +75,12 @@ export function Hero() {
           </p>
           <div className="hero-panel-proof">
             <div>
-              <span className="stat-num mono">20+</span>
-              <span className="stat-label">years in-house, combined</span>
+              <span className="stat-num mono">2</span>
+              <span className="stat-label">senior specialists</span>
             </div>
             <div>
-              <span className="stat-num mono">2</span>
-              <span className="stat-label">people on your account</span>
+              <span className="stat-num mono">0</span>
+              <span className="stat-label">account layer</span>
             </div>
           </div>
         </aside>
@@ -130,10 +130,11 @@ export function About() {
         <div>
           <div className="about-body">
             <p>
-              William &amp; Ludo spent over a decade leading marketing inside some of the UK&rsquo;s
-              best-known regulated brands, including insurance, investment platforms, Commodities and
-              consumer credit, before setting up Pointing Forward Marketing to bring that same rigour to
-              businesses who don&rsquo;t have an in-house team.
+              William spent over a decade leading marketing inside some of the UK&rsquo;s best-known
+              regulated brands: insurance, investment platforms, commodities and consumer credit. Ludo
+              spent that time building brand identity for organisations that need to close the gap
+              between what they do and how they&rsquo;re perceived. Together they set up Pointing
+              Forward Marketing to bring that rigour to businesses who don&rsquo;t have an in-house team.
             </p>
             <p>
               That means campaigns built around what a board actually wants to see: leads, activation,
