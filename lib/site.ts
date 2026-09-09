@@ -1,18 +1,25 @@
 /**
  * Single source of truth for the site's absolute URL.
  *
+ * The live origin is hardcoded as the default rather than read from the environment.
+ * VERCEL_PROJECT_PRODUCTION_URL resolves to the project's *.vercel.app host, not the
+ * custom domain, so relying on it silently published canonical tags, og:url, the
+ * sitemap and the JSON-LD identity pointing at pointing-forward.vercel.app.
+ *
  * Resolution order:
- *  1. NEXT_PUBLIC_SITE_URL  — set this in Vercel once the real domain is connected
- *  2. VERCEL_PROJECT_PRODUCTION_URL — injected automatically by Vercel, so canonical,
- *     Open Graph and the sitemap are all correct on the .vercel.app host with no config
- *  3. localhost for `next dev`
+ *  1. NEXT_PUBLIC_SITE_URL — override, e.g. to test a staging origin
+ *  2. PRODUCTION_ORIGIN — the real domain (www, because the apex 308-redirects to it)
+ *  3. localhost during `next dev`
  */
+const PRODUCTION_ORIGIN = 'https://www.pointingforward.co.uk';
+
 function resolveSiteUrl(): string {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (explicit) return explicit.replace(/\/$/, '');
 
-  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
-  if (vercel) return `https://${vercel.replace(/\/$/, '')}`;
+  // Any Vercel build — production, preview or a branch deploy — should advertise the
+  // canonical production origin, never its own ephemeral hostname.
+  if (process.env.VERCEL) return PRODUCTION_ORIGIN;
 
   return 'http://localhost:3000';
 }
